@@ -16,14 +16,13 @@ namespace BossKillTimer
             instakillThreshold = Config.Bind("Settings", "Instakill Threshold", 1f, "Display an instakill message when the kill time is <= to this value.").Value;
             On.RoR2.HealthComponent.TakeDamage += (orig, self, di) =>
             {
-                KillTimerComponent kt = null;
                 if (NetworkServer.active
                 && self.body.isChampion
                 && (!teleOnly  || self.body.isBoss))
                 {
                     if (!self.gameObject.GetComponent<KillTimerComponent>())
                     {
-                        kt = self.gameObject.AddComponent<KillTimerComponent>();
+                        KillTimerComponent kt = self.gameObject.AddComponent<KillTimerComponent>();
                         kt.bodyString = RoR2.Util.GetBestBodyName(self.gameObject);
                         kt.StartTimer();
                     }
