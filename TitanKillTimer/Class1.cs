@@ -12,7 +12,7 @@ namespace BossKillTimer
         public static float instakillThreshold = 0f;
         public void Awake()
         {
-            teleOnly = Config.Bind("Settings", "Teleporter Bosses Only", false, "Only show death messages when bosses with red healthbars die.").Value;
+            teleOnly = Config.Bind("Settings", "Teleporter Bosses Only", false, "Only show kill times when bosses with red healthbars die.").Value;
             instakillThreshold = Config.Bind("Settings", "Instakill Threshold", 1f, "Display an instakill message when killing a boss in this many seconds or less.").Value;
             On.RoR2.HealthComponent.TakeDamage += (orig, self, di) =>
             {
