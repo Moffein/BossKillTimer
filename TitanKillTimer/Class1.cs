@@ -36,12 +36,15 @@ namespace BossKillTimer
             {
                 orig(self, damageReport);
 
-                if (damageReport.victim && damageReport.victimIsChampion && (!teleOnly || damageReport.victimIsBoss))
+                if (NetworkServer.active)
                 {
-                    KillTimerComponent kt = damageReport.victim.GetComponent<KillTimerComponent>();
-                    if (kt)
+                    if (damageReport.victim && damageReport.victimIsChampion && (!teleOnly || damageReport.victimIsBoss))
                     {
-                        kt.EndTimer();
+                        KillTimerComponent kt = damageReport.victim.GetComponent<KillTimerComponent>();
+                        if (kt)
+                        {
+                            kt.EndTimer();
+                        }
                     }
                 }
             };
