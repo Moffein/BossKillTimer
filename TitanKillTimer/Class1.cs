@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 
 namespace BossKillTimer
 {
-    [BepInPlugin("com.Moffein.BossKillTimer", "Boss Kill Timer", "1.0.0")]
+    [BepInPlugin("com.Moffein.BossKillTimer", "Boss Kill Timer", "1.0.1")]
     public class BossKillTimer : BaseUnityPlugin
     {
         public static bool teleOnly = false;
