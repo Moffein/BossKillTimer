@@ -94,6 +94,6 @@ namespace BossKillTimer
         float stopwatch;
         public bool timerStarted = false;
         public bool hasDied = false;
-        public string bodyString = "";
+        public string bodyString = "BOSS";
     }
 }
