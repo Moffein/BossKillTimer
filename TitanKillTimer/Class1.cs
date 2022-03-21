@@ -69,6 +69,11 @@ namespace BossKillTimer
             }
         }
 
+        private void OnDestroy()
+        {
+            EndTimer();
+        }
+
         public void EndTimer()
         {
             if (!hasDied)
