@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -26,8 +26,14 @@
     <Reference Include="com.unity.multiplayer-hlapi.Runtime">
       <HintPath>libs\com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Decalicious">
+      <HintPath>libs\Decalicious.dll</HintPath>
+    </Reference>
     <Reference Include="Facepunch.Steamworks">
       <HintPath>libs\Facepunch.Steamworks.dll</HintPath>
+    </Reference>
+    <Reference Include="GenericIK">
+      <HintPath>libs\GenericIK.dll</HintPath>
     </Reference>
     <Reference Include="HarmonyXInterop">
       <HintPath>libs\BepInEx\HarmonyXInterop.dll</HintPath>
@@ -47,6 +53,9 @@
     <Reference Include="MMHOOK_RoR2">
       <HintPath>libs\BepInEx\MMHOOK_RoR2.dll</HintPath>
     </Reference>
+    <Reference Include="ModLoader">
+      <HintPath>libs\ModLoader.dll</HintPath>
+    </Reference>
     <Reference Include="Mono.Cecil">
       <HintPath>libs\BepInEx\Mono.Cecil.dll</HintPath>
     </Reference>
@@ -64,6 +73,12 @@
     </Reference>
     <Reference Include="MonoMod.Utils">
       <HintPath>libs\BepInEx\MonoMod.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>libs\BepInEx\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Rewired_CSharp">
+      <HintPath>libs\Rewired_CSharp.dll</HintPath>
     </Reference>
     <Reference Include="RoR2">
       <HintPath>libs\RoR2.dll</HintPath>

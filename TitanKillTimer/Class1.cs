@@ -1,11 +1,19 @@
 ﻿using BepInEx;
 using RoR2;
+using System;
 using UnityEngine;
 using UnityEngine.Networking;
 
+namespace R2API.Utils
+{
+    [AttributeUsage(AttributeTargets.Assembly)]
+    public class ManualNetworkRegistrationAttribute : Attribute
+    {
+    }
+}
 namespace BossKillTimer
 {
-    [BepInPlugin("com.Moffein.BossKillTimer", "Boss Kill Timer", "1.0.1")]
+    [BepInPlugin("com.Moffein.BossKillTimer", "Boss Kill Timer", "1.0.4")]
     public class BossKillTimer : BaseUnityPlugin
     {
         public static bool teleOnly = false;
