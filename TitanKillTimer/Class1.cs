@@ -62,11 +62,23 @@ namespace BossKillTimer
 
         private void HealthComponent_TakeDamage(On.RoR2.HealthComponent.orig_TakeDamage orig, HealthComponent self, DamageInfo damageInfo)
         {
-            orig(self, damageInfo);
-            if (!NetworkServer.active || !(self.body && self.body.isChampion && self.body.teamComponent && self.body.teamComponent.teamIndex != TeamIndex.Player)) return;
-            if (!dict.ContainsKey(self.body))
+            //Add before so that instakills register.
+            bool matchesCriteria = self.body && self.body.isChampion && self.body.teamComponent && self.body.teamComponent.teamIndex != TeamIndex.Player;
+            bool added = false;
+            if (NetworkServer.active && matchesCriteria && !damageInfo.rejected)
             {
-                dict.Add(self.body, Time.time);
+                if (!dict.ContainsKey(self.body))
+                {
+                    added = true;
+                    dict.Add(self.body, Time.time);
+                }
+            }
+
+            orig(self, damageInfo);
+
+            if (added && damageInfo.rejected)
+            {
+                dict.Remove(self.body);
             }
         }
 
