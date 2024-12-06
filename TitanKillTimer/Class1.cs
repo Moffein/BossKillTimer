@@ -29,6 +29,7 @@ namespace BossKillTimer
             instakillThreshold = Config.Bind("Settings", "Instakill Threshold", 1f, "Display an instakill message when the kill time is <= to this value.").Value;
             RoR2.Stage.onStageStartGlobal += Stage_onStageStartGlobal;
             On.RoR2.HealthComponent.TakeDamage += HealthComponent_TakeDamage;
+            On.RoR2.GlobalEventManager.OnCharacterDeath += GlobalEventManager_OnCharacterDeath;
         }
 
         private void GlobalEventManager_OnCharacterDeath(On.RoR2.GlobalEventManager.orig_OnCharacterDeath orig, GlobalEventManager self, DamageReport damageReport)
